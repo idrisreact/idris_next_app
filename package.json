@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next-auth/prisma-adapter": "^0.4.4-canary.81",
+    "@prisma/client": "^4.14.1",
     "@types/node": "18.15.11",
     "@types/react": "18.0.35",
     "@types/react-dom": "18.0.11",
@@ -17,8 +19,10 @@
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "idvor-components": "^2.0.2",
-    "next": "13.3.0",
+    "next": "13.4.0",
+    "next-auth": "^4.22.1",
     "postcss": "8.4.21",
+    "prisma": "^4.14.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^5.3.10",

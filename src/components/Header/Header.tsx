@@ -6,7 +6,7 @@ interface HeaderProps {
   children: React.ReactNode;
 }
 
-const HeaderStyled = styled.header`
+const HeaderStyled = styled.div`
   min-height: 50px;
   border-bottom: 1px solid #ffffff72;
   display: flex;
@@ -16,15 +16,16 @@ const HeaderStyled = styled.header`
   margin-bottom: 5vh;
 `;
 
-const HeaderLinks = styled.div`
+const HeaderLinks = styled.a`
   display: flex;
+  color: white;
   a {
     margin-right: 10px;
     text-decoration: none;
   }
 `;
 
-const HeaderLink = styled.a`
+const HeaderLink = styled(Link)`
   color: #ffffff;
   &:hover {
     color: "#FC7A57";
@@ -36,15 +37,8 @@ const Header: FC<HeaderProps> = ({ children }) => {
     <>
       <HeaderStyled>
         <HeaderLinks>
-          <Link href="/">
-            <HeaderLink>Home</HeaderLink>
-          </Link>
-          <Link href="/contact">
-            <HeaderLink>contact</HeaderLink>
-          </Link>
-          <Link href="/socials">
-            <HeaderLink>socials</HeaderLink>
-          </Link>
+          <HeaderLink href="/">Home</HeaderLink>
+          <HeaderLink href="/contact">Contact</HeaderLink>
         </HeaderLinks>
       </HeaderStyled>
       {children}

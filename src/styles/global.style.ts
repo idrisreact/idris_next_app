@@ -34,8 +34,8 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   /* Reset CSS */
 
   body {
-   background-color: #263D42;
-   color: #FFFFFF; 
+   background-color: #0D1821;
+   color: #fff; 
    font-family: sans-serif; 
   }
   * {

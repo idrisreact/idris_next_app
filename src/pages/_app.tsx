@@ -1,17 +1,29 @@
-import Header from "@/components/Header/Header";
 import { GlobalStyle, theme } from "@/styles/global.style";
-import type { AppProps } from "next/app";
+import type { AppContext, AppProps } from "next/app";
+import App from "next/app";
 import { ThemeProvider } from "styled-components";
 
-export default function App({ Component, pageProps }: AppProps) {
+import "../styles/tailwind.css";
+
+type MyPageProps = AppProps & {
+  example: string;
+};
+
+const MyApp = ({ Component, pageProps, example }: MyPageProps) => {
   return (
     <>
       <ThemeProvider theme={theme.dark}>
         <GlobalStyle />
-        <Header>
-          <Component {...pageProps} />
-        </Header>
+        <h1>{example}</h1>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   );
-}
+};
+
+MyApp.getInitialProps = async (appContext: AppContext): Promise<any> => {
+  const appProps = await App.getInitialProps(appContext);
+  return { ...appProps, example: "idris cooks" };
+};
+
+export default MyApp;

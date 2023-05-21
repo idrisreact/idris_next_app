@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - 8000:5432
+    environment:
+      POSTGRES_USER: idris
+      POSTGRES_PASSWORD: enter1234
+      POSTGRES_DB: idrispage
+    volumes:
+      - ./data:/var/lib/postgresql/data
