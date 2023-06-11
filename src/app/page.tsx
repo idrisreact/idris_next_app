@@ -1,11 +1,17 @@
+import SignIn from "@/components/SignIn/SignIn";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Idris Home",
 };
 
-const page = () => {
-  return <div className="container mx-auto px-4">Home</div>;
+const home = () => {
+  return (
+    <div className="container mx-auto px-4">
+      <p>Home</p>
+      <SignIn />
+    </div>
+  );
 };
 
-export default page;
+export default home;
