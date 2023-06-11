@@ -1,7 +1,6 @@
+"use client";
 import React, { FC } from "react";
 import { Button } from "../Button/Button";
-import { Text } from "../Text/Text";
-import VerticalSpace from "../VerticalSpace/VerticalSpace";
 
 interface HeroProps {
   header: string;
@@ -13,10 +12,9 @@ export const Hero: FC<HeroProps> = (props) => {
   const { header, subHeading, ctaText } = props;
 
   return (
-    <div>
-      <Text type="h1">{header}</Text>
-      <Text type="default">{subHeading}</Text>
-      <VerticalSpace size="16px" />
+    <div className="flex flex-col items-center justify-center min-h-screen md:h-screen">
+      <h1 className="text-4xl font-bold text-center mb-3">{header}</h1>
+      <h2 className="text-lg text-center text-gray-600 mb-4">{subHeading}</h2>
       <Button isPrimary>{ctaText}</Button>
     </div>
   );

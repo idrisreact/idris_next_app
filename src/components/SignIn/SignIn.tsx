@@ -1,21 +1,28 @@
 "use client";
 import React from "react";
 import { signIn, useSession, signOut } from "next-auth/react";
-import { Button } from "idvor-components";
+import { Button } from "../../components/Button/Button";
 
 const SignIn = () => {
   const { data: session } = useSession();
   return (
     <>
-      <div>{!session && <Button onClick={() => signIn()}>Sign in</Button>}</div>
+      <div>
+        {!session && (
+          <Button isPrimary onClick={() => signIn()}>
+            Sign in
+          </Button>
+        )}
+      </div>
 
       {session && (
-        <>
-          <div>{<Button onClick={() => signOut()}>Sign out</Button>}</div>
-          <div>
-            <p>Welcome {session?.user?.name} </p>
-          </div>
-        </>
+        <div className="flex align-middle justify-center">
+          <Button isPrimary onClick={() => signOut()}>
+            Sign out
+          </Button>
+
+          <p className="self-center px-2">Welcome {session?.user?.name} </p>
+        </div>
       )}
     </>
   );
